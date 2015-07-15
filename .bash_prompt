@@ -243,13 +243,10 @@ function get_battery_level() {
 }
 
 # Define the sexy-bash-prompt
-PS1="\[$prompt_user_color\]\u\[$prompt_reset\] \
-\[$prompt_preposition_color\]at\[$prompt_reset\] \
-\[$prompt_device_color\]\h\[$prompt_reset\] with \$(get_battery_level) \
-\[$prompt_preposition_color\]fuel, exploring\[$prompt_reset\] \
-\[$prompt_dir_color\]\w\[$prompt_reset\]\
+PS1="\[$prompt_preposition_color\][\[$prompt_reset\] \
+\[$prompt_dir_color\]\w\[$prompt_reset\] ]\
 \$( is_on_git && \
-  echo -n \" \[$prompt_preposition_color\]on mission\[$prompt_reset\] \" && \
+  echo -n \" \[$prompt_preposition_color\]->\[$prompt_reset\] \" && \
   echo -n \"\[$prompt_git_status_color\]\$(get_git_info)\" && \
   echo -n \"\[$prompt_git_progress_color\]\$(get_git_progress)\" && \
   echo -n \"\[$prompt_preposition_color\]\")\n\[$prompt_reset\]\
